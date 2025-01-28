@@ -6,8 +6,8 @@ dotenv.config({
     path: './.env'
 })
 
-connectDB()
-.then(()=>{
+
+connectDB().then(()=>{
     app.on('error',(error)=>{
         console.error('Server error:', error);
         throw error;
