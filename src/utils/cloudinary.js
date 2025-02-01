@@ -13,7 +13,7 @@ import { v2 as cloudinary } from 'cloudinary';
 
     const uploadOnCloudinary = async (localFilePath)=>{
         try {
-            if (localFilePath) return null;
+            if (!localFilePath) return null;
             const response = await cloudinary.uploader.upload(localFilePath,{
                 resource_type: "auto"
             })
@@ -27,18 +27,5 @@ import { v2 as cloudinary } from 'cloudinary';
 
 
 
-
-
-     await cloudinary.uploader
-       .upload(
-           'https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg', {
-               public_id: 'shoes',
-           }
-       )
-       .catch((error) => {
-           console.log(error);
-       });
-    
-    console.log(uploadResult);
-    
+    export {uploadOnCloudinary}
     
